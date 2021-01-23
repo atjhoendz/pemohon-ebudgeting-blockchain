@@ -27,7 +27,7 @@ const fields = [
   {
     key: "no-spd",
     label: "No. SPD",
-    _style: "min-width:100px;text-align:center;padding-right:12px!important",
+    _style: "min-width:100px;text-align:center",
   },
   { key: "nip", label: "NIP", _style: "text-align:center" },
   "golongan",
@@ -35,7 +35,7 @@ const fields = [
   {
     key: "bukti-spd",
     label: "Bukti SPD",
-    _style: "min-width:120px;text-align:center;padding-right:12px!important",
+    _style: "min-width:120px;text-align:center",
   },
   {
     key: "status-spd",
@@ -44,13 +44,9 @@ const fields = [
   },
   {
     key: "status-berkas",
-    _style: "min-width:120px;text-align:center;padding-right:12px!important",
+    _style: "min-width:120px;text-align:center",
   },
   { key: "alasan-ditolak", _style: "text-align:center" },
-  {
-    key: "proses",
-    _style: "width:50px;text-align:center;padding-right:12px!important",
-  },
 ];
 
 export default {

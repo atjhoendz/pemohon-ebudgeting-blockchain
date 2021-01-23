@@ -30,33 +30,9 @@
         pagination
         border
       >
-        <template #proses="{index}">
-          <td>
-            <CButtonGroup>
-              <CButton color="danger" :to="deleteByID(index)">Hapus</CButton>
-            </CButtonGroup>
-          </td>
-        </template>
         <template #no="{index}">
           <td>
             {{ index + 1 }}
-          </td>
-        </template>
-        <template #no-spd="{index}">
-          <td>
-            <CButton :to="inputSpd(index)" color="primary" size="sm"
-              >Input No. SPD</CButton
-            >
-          </td>
-        </template>
-        <template #bukti-spd>
-          <td>
-            <CSelect :options="options" placeholder="Pilih" size="sm"></CSelect>
-          </td>
-        </template>
-        <template #status-berkas>
-          <td>
-            <CSelect :options="options" placeholder="Pilih" size="sm"></CSelect>
           </td>
         </template>
       </CDataTable>
@@ -89,28 +65,9 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      options: [
-        { label: "Ada", value: "Ada" },
-        { label: "Tidak ada", value: "Tidak ada" },
-      ],
-    };
-  },
   computed: {
     urlTambahData: function() {
       return this.routeEndpoint + "/tambah";
-    },
-  },
-  methods: {
-    editByID(id) {
-      return `${this.routeEndpoint}/edit?id=${id}`;
-    },
-    deleteByID(id) {
-      return `${this.routeEndpoint}/hapus?id=${id}`;
-    },
-    inputSpd(id) {
-      return `${this.routeEndpoint}/input-spd?id=${id}`;
     },
   },
 };

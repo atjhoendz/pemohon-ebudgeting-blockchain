@@ -8,6 +8,10 @@
       </CWidgetSimple>
     </CCol>
     <CCol sm="12" lg="3">
+      <CWidgetSimple header="Data Anggaran" :text="jumlahDataPemohon">
+      </CWidgetSimple>
+    </CCol>
+    <CCol sm="12" lg="3">
       <CWidgetSimple header="Data Pemohon" :text="jumlahDataPemohon">
       </CWidgetSimple>
     </CCol>

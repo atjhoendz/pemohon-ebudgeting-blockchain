@@ -5,7 +5,10 @@ export const itemsPemohon = [{
   "golongan": "Ellie",
   "jabatan": "Bogart",
   "status-spd": "ppm",
-  "alasan-ditolak": "Donec ut dolor."
+  "alasan-ditolak": "Donec ut dolor.",
+  "no-spd": "109280983",
+  "bukti-spd":"tidak ada",
+  "status-berkas":"ada"
 }, {
   "nama": "Derrick",
   "dari-lembaga": "Elvina",
@@ -13,7 +16,10 @@ export const itemsPemohon = [{
   "golongan": "Pat",
   "jabatan": "Nertie",
   "status-spd": "ovp",
-  "alasan-ditolak": "In blandit ultrices enim."
+  "alasan-ditolak": "In blandit ultrices enim.",
+  "no-spd": "109280983",
+  "bukti-spd":"ada",
+  "status-berkas":"ada"
 }, {
   "nama": "Trish",
   "dari-lembaga": "Dom",
@@ -21,7 +27,10 @@ export const itemsPemohon = [{
   "golongan": "Freddie",
   "jabatan": "Janaye",
   "status-spd": "nco",
-  "alasan-ditolak": "In tempor, turpis nec euismod scelerisque."
+  "alasan-ditolak": "In tempor, turpis nec euismod scelerisque.",
+  "no-spd": "109280983",
+  "bukti-spd":"ada",
+  "status-berkas":"ada"
 }, {
   "nama": "Reinaldos",
   "dari-lembaga": "Idaline",
@@ -29,7 +38,10 @@ export const itemsPemohon = [{
   "golongan": "Shep",
   "jabatan": "Francyne",
   "status-spd": "qhf",
-  "alasan-ditolak": "Fusce posuere felis sed lacus."
+  "alasan-ditolak": "Fusce posuere felis sed lacus.",
+  "no-spd": "109280983",
+  "bukti-spd":"ada",
+  "status-berkas":"tidak ada"
 }, {
   "nama": "Effie",
   "dari-lembaga": "Maxie",
@@ -37,7 +49,10 @@ export const itemsPemohon = [{
   "golongan": "Zachary",
   "jabatan": "Marcelia",
   "status-spd": "alo",
-  "alasan-ditolak": "Morbi vel lectus in quam fringilla rhoncus."
+  "alasan-ditolak": "Morbi vel lectus in quam fringilla rhoncus.",
+  "no-spd": "109280983",
+  "bukti-spd":"tidak ada",
+  "status-berkas":"ada"
 }, {
   "nama": "Brenda",
   "dari-lembaga": "Brenden",
@@ -45,7 +60,10 @@ export const itemsPemohon = [{
   "golongan": "Jennilee",
   "jabatan": "Spenser",
   "status-spd": "frw",
-  "alasan-ditolak": "Proin eu mi."
+  "alasan-ditolak": "Proin eu mi.",
+  "no-spd": "109280983",
+  "bukti-spd":"ada",
+  "status-berkas":"ada"
 }, {
   "nama": "Mitch",
   "dari-lembaga": "Wainwright",
@@ -53,5 +71,31 @@ export const itemsPemohon = [{
   "golongan": "Reinhold",
   "jabatan": "Janeva",
   "status-spd": "ktw",
-  "alasan-ditolak": "In sagittis dui vel nisl."
+  "alasan-ditolak": "In sagittis dui vel nisl.",
+  "no-spd": "109280983",
+  "bukti-spd":"ada",
+  "status-berkas":"ada"
+}]
+
+export const itemsAnggaran = [{
+  "nama-lembaga": "Sybilla",
+  "sisa-anggaran": "27711321.53"
+}, {
+  "nama-lembaga": "Andonis",
+  "sisa-anggaran": "28607548.38"
+}, {
+  "nama-lembaga": "Domenic",
+  "sisa-anggaran": "69509997.68"
+}, {
+  "nama-lembaga": "Chevy",
+  "sisa-anggaran": "98056200.89"
+}, {
+  "nama-lembaga": "Cassandry",
+  "sisa-anggaran": "98027809.69"
+}, {
+  "nama-lembaga": "Christi",
+  "sisa-anggaran": "78608410.24"
+}, {
+  "nama-lembaga": "Augusta",
+  "sisa-anggaran": "97144351.43"
 }]
