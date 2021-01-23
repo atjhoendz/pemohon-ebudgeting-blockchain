@@ -7,9 +7,14 @@ const TheContainer = () => import('@/containers/TheContainer')
 // Views
 const Dashboard = () => import('@/views/Dashboard')
 const LoginPage = () => import('@/views/auth/LoginPage')
+
+// Data Pemohon
 const DataPemohon = () => import('@/views/data-pemohon/DataPemohon')
-const InputSPD = () => import('@/views/data-pemohon/InputSPD')
 const TambahDataPemohon = () => import('@/views/data-pemohon/TambahData')
+
+// Data Anggaran
+const DataAnggaran = () => import('@/views/data-anggaran/DataAnggaran')
+
 
 Vue.use(Router)
 
@@ -46,13 +51,25 @@ function configRoutes () {
           component: DataPemohon
         },
         {
-          path: 'input-spd',
-          name: 'Input No. SPD',
-          component: InputSPD
+          path: 'tambah',
+          name: 'Tambah Data Pemohon',
+          component: TambahDataPemohon
+        }
+      ]
+    },
+    {
+      path: '/data-anggaran',
+      name: 'Data Anggaran',
+      redirect: '/data-anggaran',
+      component: TheContainer,
+      children: [
+        {
+          path: '/',
+          component: DataAnggaran
         },
         {
           path: 'tambah',
-          name: 'Tambah Data Pemohon',
+          name: 'Tambah Data Anggaran',
           component: TambahDataPemohon
         }
       ]

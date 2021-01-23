@@ -14,9 +14,21 @@ export default [
       },
       {
         _name: 'CSidebarNavDropdown',
+        name: 'Data Anggaran',
+        route: '/data-anggaran',
+        icon: 'cil-dollar',
+        items: [
+          {
+            name: 'Lihat Data',
+            to: '/data-anggaran'
+          },
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
         name: 'Data Pemohon',
-        route: '/',
-        icon: 'cil-drop',
+        route: '/data-pemohon',
+        icon: 'cil-user',
         items: [
           {
             name: 'Lihat Data',
