@@ -3,12 +3,12 @@
     <CToggler
       in-header
       class="ml-3 d-lg-none"
-      @click="$store.commit('toggleSidebarMobile')"
+      @click="$store.commit('dashboard/toggleSidebarMobile')"
     />
     <CToggler
       in-header
       class="ml-3 d-md-down-none"
-      @click="$store.commit('toggleSidebarDesktop')"
+      @click="$store.commit('dashboard/toggleSidebarDesktop')"
     />
     <div class="ml-3 my-auto d-lg-none">
       <span class="h4">Pemohon</span>
@@ -26,12 +26,12 @@
 </template>
 
 <script>
-import TheHeaderDropdownAccnt from "./TheHeaderDropdownAccnt";
+import TheHeaderDropdownAccnt from './TheHeaderDropdownAccnt'
 
 export default {
-  name: "TheHeader",
+  name: 'TheHeader',
   components: {
     TheHeaderDropdownAccnt,
   },
-};
+}
 </script>

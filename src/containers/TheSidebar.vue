@@ -3,7 +3,9 @@
     fixed
     :minimize="minimize"
     :show="show"
-    @update:show="(value) => $store.commit('set', ['sidebarShow', value])"
+    @update:show="
+      value => $store.commit('dashboard/set', ['sidebarShow', value])
+    "
   >
     <CSidebarBrand class="d-md-down-none" to="/">
       <img
@@ -21,24 +23,26 @@
     <CRenderFunction flat :content-to-render="$options.nav" />
     <CSidebarMinimizer
       class="d-md-down-none"
-      @click.native="$store.commit('set', ['sidebarMinimize', !minimize])"
+      @click.native="
+        $store.commit('dashboard/set', ['sidebarMinimize', !minimize])
+      "
     />
   </CSidebar>
 </template>
 
 <script>
-import nav from "./_nav";
+import nav from './_nav'
 
 export default {
-  name: "TheSidebar",
+  name: 'TheSidebar',
   nav,
   computed: {
     show() {
-      return this.$store.state.sidebarShow;
+      return this.$store.state.dashboard.sidebarShow
     },
     minimize() {
-      return this.$store.state.sidebarMinimize;
+      return this.$store.state.dashboard.sidebarMinimize
     },
   },
-};
+}
 </script>
