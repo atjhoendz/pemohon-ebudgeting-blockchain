@@ -1,10 +1,7 @@
 <template>
   <CRow>
     <CCol sm="12" lg="6">
-      <CWidgetSimple
-        header="Message"
-        text="Selamat Datang di Halaman Bagian Umum"
-      >
+      <CWidgetSimple header="Message" text="Selamat Datang di Halaman Pemohon">
       </CWidgetSimple>
     </CCol>
     <CCol sm="12" lg="3">
@@ -19,13 +16,13 @@
 </template>
 
 <script>
-import { itemsPemohon } from "../sample-data/data";
+import { itemsPemohon } from '../sample-data/data'
 export default {
-  name: "Dashboard",
+  name: 'Dashboard',
   computed: {
     jumlahDataPemohon() {
-      return `${itemsPemohon.length}`;
+      return `${itemsPemohon.length}`
     },
   },
-};
+}
 </script>
