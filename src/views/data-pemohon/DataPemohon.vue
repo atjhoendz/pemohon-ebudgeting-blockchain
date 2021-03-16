@@ -4,61 +4,59 @@
       <card-list-data
         title="Data Pemohon"
         routeEndpoint="data-pemohon"
-        :items="itemsPemohon"
+        :items="items"
         :fields="fields"
+        :isLoading="isLoading"
       ></card-list-data>
     </CCol>
+    <toast-msg :listToasts="listToasts" />
   </CRow>
 </template>
 
 <script>
-import CardListData from "../../components/CardListData.vue";
-import { itemsPemohon } from "../../sample-data/data";
-
-const fields = [
-  {
-    key: "no",
-    label: "No.",
-    _style: "width:10px;text-align:center;padding-right:12px!important",
-    sorter: false,
-  },
-  { key: "nama", _style: "text-align:center" },
-  { key: "dari-lembaga", _style: "text-align:center" },
-  {
-    key: "no-spd",
-    label: "No. SPD",
-    _style: "min-width:100px;text-align:center",
-  },
-  { key: "nip", label: "NIP", _style: "text-align:center" },
-  "golongan",
-  "jabatan",
-  {
-    key: "bukti-spd",
-    label: "Bukti SPD",
-    _style: "min-width:120px;text-align:center",
-  },
-  {
-    key: "status-spd",
-    label: "Status SPD",
-    _style: "text-align:center",
-  },
-  {
-    key: "status-berkas",
-    _style: "min-width:120px;text-align:center",
-  },
-  { key: "alasan-ditolak", _style: "text-align:center" },
-];
+import CardListData from '../../components/CardListData.vue'
+import ToastMsg from '../../components/ToastMsg'
+import fields from './fields'
+import { PemohonService } from '../../services/pemohon.service'
 
 export default {
-  name: "DataPemohon",
-  components: { CardListData },
+  name: 'DataPemohon',
+  components: { CardListData, ToastMsg },
   data() {
     return {
-      itemsPemohon,
+      items: [],
       fields,
-    };
+      isLoading: false,
+      listToasts: [],
+    }
   },
-};
+  methods: {
+    async getAll() {
+      this.isLoading = false
+
+      try {
+        const data = await PemohonService.getAll()
+
+        this.items = data.map(item => {
+          return {
+            key: item.Key,
+            ...item.Record,
+          }
+        })
+      } catch (err) {
+        const toast = {
+          message: 'Terjadi masalah. Data tidak berhasil didapatkan.',
+          color: 'danger',
+        }
+        this.listToasts.push(toast)
+      }
+      this.isLoading = false
+    },
+  },
+  async mounted() {
+    await this.getAll()
+  },
+}
 </script>
 
 <style></style>

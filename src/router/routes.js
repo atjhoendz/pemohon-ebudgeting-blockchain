@@ -18,6 +18,7 @@ export const routes = [
     redirect: '/dashboard',
     name: 'Home',
     component: TheContainer,
+    meta: { isAuth: true },
     children: [
       {
         path: 'dashboard',
@@ -31,6 +32,7 @@ export const routes = [
     name: 'Data Pemohon',
     redirect: '/data-pemohon',
     component: TheContainer,
+    meta: { isAuth: true },
     children: [
       {
         path: '/',
@@ -48,6 +50,7 @@ export const routes = [
     name: 'Data Anggaran',
     redirect: '/data-anggaran',
     component: TheContainer,
+    meta: { isAuth: true },
     children: [
       {
         path: '/',
@@ -62,7 +65,7 @@ export const routes = [
   },
   {
     path: '/login',
-    name: 'LoginPage',
+    name: 'Login',
     component: LoginPage,
   },
 ]
