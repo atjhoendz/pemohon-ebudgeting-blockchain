@@ -7,6 +7,7 @@
         :items="items"
         :fields="fields"
         :isLoading="isLoading"
+        :showButton="false"
       ></card-list-data>
     </CCol>
     <toast-msg :listToasts="listToasts" />

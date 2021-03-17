@@ -10,36 +10,22 @@ export default [
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Master']
+        _children: ['Master'],
       },
       {
-        _name: 'CSidebarNavDropdown',
+        _name: 'CSidebarNavItem',
         name: 'Data Anggaran',
         route: '/data-anggaran',
+        to: '/data-anggaran',
         icon: 'cil-dollar',
-        items: [
-          {
-            name: 'Lihat Data',
-            to: '/data-anggaran'
-          },
-        ]
       },
       {
-        _name: 'CSidebarNavDropdown',
+        _name: 'CSidebarNavItem',
         name: 'Data Pemohon',
         route: '/data-pemohon',
         icon: 'cil-user',
-        items: [
-          {
-            name: 'Lihat Data',
-            to: '/data-pemohon'
-          },
-          {
-            name: 'Tambah Data',
-            to: '/data-pemohon/tambah'
-          }
-        ]
+        to: '/data-pemohon',
       },
-    ]
-  }
+    ],
+  },
 ]
