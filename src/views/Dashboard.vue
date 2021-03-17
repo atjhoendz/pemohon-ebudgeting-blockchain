@@ -5,24 +5,69 @@
       </CWidgetSimple>
     </CCol>
     <CCol sm="12" lg="3">
-      <CWidgetSimple header="Data Anggaran" :text="jumlahDataPemohon">
+      <CWidgetSimple header="Data Anggaran" :text="jumlahDataAnggaran">
+        <CSpinner color="info" v-if="isLoading && !jumlahDataAnggaran" />
       </CWidgetSimple>
     </CCol>
     <CCol sm="12" lg="3">
       <CWidgetSimple header="Data Pemohon" :text="jumlahDataPemohon">
+        <CSpinner color="info" v-if="isLoading && !jumlahDataPemohon" />
       </CWidgetSimple>
     </CCol>
+    <toast-msg :listToasts="listToasts" />
   </CRow>
 </template>
 
 <script>
-import { itemsPemohon } from '../sample-data/data'
+import { AnggaranService } from '../services/anggaran.service'
+import { PemohonService } from '../services/pemohon.service'
+import ToastMsg from '../components/ToastMsg'
+
 export default {
   name: 'Dashboard',
-  computed: {
-    jumlahDataPemohon() {
-      return `${itemsPemohon.length}`
+  components: {
+    ToastMsg,
+  },
+  data: () => ({
+    jumlahDataAnggaran: '',
+    jumlahDataPemohon: '',
+    isLoading: false,
+    listToasts: [],
+  }),
+  methods: {
+    async getCountDataAnggaran() {
+      try {
+        this.jumlahDataAnggaran = await AnggaranService.getCountData()
+      } catch (err) {
+        const toast = {
+          message:
+            'Terjadi masalah. Jumlah data anggaran tidak berhasil didapatkan.',
+          color: 'danger',
+        }
+        this.listToasts.push(toast)
+      }
     },
+    async getCountDataPemohon() {
+      try {
+        this.jumlahDataPemohon = await PemohonService.getCountData()
+      } catch (err) {
+        const toast = {
+          message:
+            'Terjadi masalah. Jumlah data pemohon tidak berhasil didapatkan.',
+          color: 'danger',
+        }
+        this.listToasts.push(toast)
+      }
+    },
+    async getDataDashboard() {
+      this.isLoading = true
+      await this.getCountDataAnggaran()
+      await this.getCountDataPemohon()
+      this.isLoading = false
+    },
+  },
+  async mounted() {
+    await this.getDataDashboard()
   },
 }
 </script>
