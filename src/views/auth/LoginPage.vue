@@ -11,7 +11,7 @@
         </CCol>
       </CRow>
       <CRow class="justify-content-center">
-        <CCol md="5">
+        <CCol md="4">
           <CCardGroup>
             <CCard class="p-4">
               <CCardBody>
