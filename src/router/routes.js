@@ -4,6 +4,7 @@ const TheContainer = () => import('@/containers/TheContainer')
 // Views
 const Dashboard = () => import('@/views/Dashboard')
 const LoginPage = () => import('@/views/auth/LoginPage')
+const NotFoundPage = () => import('@/views/NotFoundPage')
 
 // Data Pemohon
 const DataPemohon = () => import('@/views/data-pemohon/DataPemohon')
@@ -67,5 +68,10 @@ export const routes = [
     path: '/login',
     name: 'Login',
     component: LoginPage,
+  },
+  {
+    path: '*',
+    name: 'NotFoundPage',
+    component: NotFoundPage,
   },
 ]
