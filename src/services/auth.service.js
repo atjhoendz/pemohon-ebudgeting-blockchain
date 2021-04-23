@@ -4,10 +4,6 @@ import $router from '../router'
 import axiosService from './axios.service'
 
 export class AuthService {
-  static get allowedRoles() {
-    return ['Admin', 'AdminKeuangan']
-  }
-
   static async makeLogin({ username, password }) {
     try {
       const response = await axiosService.post('auth/login', {
@@ -17,7 +13,7 @@ export class AuthService {
 
       const role = parseTokenData(response.data.data.accessToken).role
 
-      if (!this.allowedRoles.includes(role)) return 401
+      if (role != 'Pemohon') return 401
 
       _setAuthData({
         accessToken: response.data.data.accessToken,
