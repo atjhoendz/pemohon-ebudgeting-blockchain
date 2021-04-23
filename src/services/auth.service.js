@@ -13,7 +13,10 @@ export class AuthService {
 
       const role = parseTokenData(response.data.data.accessToken).role
 
-      if (role != 'Pemohon') return 401
+      if (role != 'Pemohon') {
+        await axiosService.post('auth/logout')
+        return 401
+      }
 
       _setAuthData({
         accessToken: response.data.data.accessToken,
