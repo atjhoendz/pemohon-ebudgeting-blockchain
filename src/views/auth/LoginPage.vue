@@ -100,16 +100,16 @@ export default {
           password: this.formData.password,
         })
 
-        if (result == 401)
+        if (result == 401) {
+          this.isLoading = false
           return (this.message =
             'Login tidak berhasil. Anda tidak memiliki hak akses ke halaman selanjutnya.')
-
+        }
         return await this.$router.push('/')
       } catch (err) {
         this.message =
           'Login tidak berhasil. Periksa kembali username/password anda.'
       }
-
       this.isLoading = false
     },
   },
