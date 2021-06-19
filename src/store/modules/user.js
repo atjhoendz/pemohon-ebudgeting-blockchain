@@ -4,6 +4,7 @@ export default {
   namespaced: true,
   state: {
     currentUser: {
+      sub: currentUser?.sub || '',
       exp: currentUser?.exp || '',
       role: currentUser?.role || '',
       username: currentUser?.username || '',
@@ -11,8 +12,9 @@ export default {
   },
   mutations: {
     SET_CURRENT_USER(state, currentUserData) {
-      const { exp, role, username } = currentUserData
+      const { exp, role, username, sub } = currentUserData
       state.currentUser = {
+        sub: sub,
         exp: exp,
         role: role,
         username: username,
