@@ -8,7 +8,6 @@ const NotFoundPage = () => import('@/views/NotFoundPage')
 
 // Data Pemohon
 const DataPemohon = () => import('@/views/data-pemohon/DataPemohon')
-const TambahDataPemohon = () => import('@/views/data-pemohon/TambahData')
 
 // Data Anggaran
 const DataAnggaran = () => import('@/views/data-anggaran/DataAnggaran')
@@ -39,11 +38,6 @@ export const routes = [
         path: '/',
         component: DataPemohon,
       },
-      {
-        path: 'tambah',
-        name: 'Tambah Data Pemohon',
-        component: TambahDataPemohon,
-      },
     ],
   },
   {
@@ -56,11 +50,6 @@ export const routes = [
       {
         path: '/',
         component: DataAnggaran,
-      },
-      {
-        path: 'tambah',
-        name: 'Tambah Data Anggaran',
-        component: TambahDataPemohon,
       },
     ],
   },

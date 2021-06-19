@@ -19,6 +19,7 @@ import CardListData from '../../components/CardListData.vue'
 import ToastMsg from '../../components/ToastMsg'
 import fields from './fields'
 import { PemohonService } from '../../services/pemohon.service'
+import { UserService } from '../../services/user.service'
 
 export default {
   name: 'DataPemohon',
@@ -36,9 +37,17 @@ export default {
       this.isLoading = false
 
       try {
-        const data = await PemohonService.getAll()
+        const pemohonData = await PemohonService.getAll()
 
-        this.items = data.map(item => {
+        const currentUserKey = this.$store.state.user.currentUser.sub
+
+        const userData = await UserService.getUserByKey(currentUserKey)
+
+        const filteredPemohon = pemohonData.filter(
+          item => item.Record.nama == userData.nama_lengkap
+        )
+
+        this.items = filteredPemohon.map(item => {
           return {
             key: item.Key,
             ...item.Record,
