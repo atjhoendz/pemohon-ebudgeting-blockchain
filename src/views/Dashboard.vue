@@ -49,7 +49,11 @@ export default {
     },
     async getCountDataPemohon() {
       try {
-        this.jumlahDataPemohon = await PemohonService.getCountData()
+        const currentUserKey = this.$store.state.user.currentUser.sub
+
+        this.jumlahDataPemohon = await PemohonService.getCountData(
+          currentUserKey
+        )
       } catch (err) {
         const toast = {
           message:
