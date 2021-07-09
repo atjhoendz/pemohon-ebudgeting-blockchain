@@ -43,6 +43,12 @@ export default {
         const data = await AnggaranService.getAll()
 
         this.items = data.map(item => {
+          item.Record.sisa_anggaran = parseInt(
+            item.Record.sisa_anggaran
+          ).toLocaleString('id', {
+            style: 'currency',
+            currency: 'IDR',
+          })
           return {
             key: item.Key,
             ...item.Record,
